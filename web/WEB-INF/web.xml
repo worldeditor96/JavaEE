@@ -23,4 +23,34 @@
         <url-pattern>/hello-world-jsp</url-pattern>
     </servlet-mapping>
 
+<!--    <servlet>-->
+<!--        <servlet-name>SetCookiesServlet</servlet-name>-->
+<!--        <jsp-file>SetCookiesServlet</jsp-file>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>SetCookiesServlet</servlet-name>-->
+<!--        <url-pattern>/set-cookies</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>GetCookiesServlet</servlet-name>-->
+<!--        <jsp-file>GetCookiesServlet</jsp-file>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>GetCookiesServlet</servlet-name>-->
+<!--        <url-pattern>/get-cookies</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>DeleteCookiesServlet</servlet-name>-->
+<!--        <jsp-file>DeleteCookiesServlet</jsp-file>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>DeleteCookiesServlet</servlet-name>-->
+<!--        <url-pattern>/delete-cookies</url-pattern>-->
+<!--    </servlet-mapping>-->
+
 </web-app>

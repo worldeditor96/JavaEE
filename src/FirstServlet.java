@@ -1,8 +1,9 @@
+import somePackage.Cart;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "FirstServlet", value = "/FirstServlet")
 public class FirstServlet extends HttpServlet {
@@ -12,32 +13,27 @@ public class FirstServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        Integer count = (Integer) session.getAttribute("count");
+        Cart cart = (Cart)session.getAttribute("cart");
 
-        if (count == null) {
-            session.setAttribute("count", 1);
-            count = 1;
-        } else {
-            session.setAttribute("count", count + 1);
+        String name = request.getParameter("name");
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+        if (cart == null) {
+             cart = new Cart();
+             cart.setName(name);
+             cart.setQiantity(quantity);
         }
 
-//        String name = request.getParameter("name");
-//        String surname = request.getParameter("surname");
+        session.setAttribute("cart", cart);
 
-        PrintWriter pw = response.getWriter();
 
-        pw.println("<html>");
-        pw.println("<h1>You count is: " + count + " hi </h1>");
+//        PrintWriter pw = response.getWriter();
+//        pw.println("<html>");
+//        //pw.println("<h1>You count is: " + count + " hi </h1>");
+//        //pw.println("<h1>Hello-world " + name + " " + surname + " hy </h1>");
+//        pw.println("</html>");
 
-        //pw.println("<h1>Hello-world " + name + " " + surname + " hy </h1>");
-        pw.println("</html>");
-
-//        response.sendRedirect("http://www.google.com");
-//        response.sendRedirect("/firstJsp.jsp");
-//
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/firstJsp.jsp");
-//        dispatcher.forward(request, response);
-
+        getServletContext().getRequestDispatcher("/showCart.jsp").forward(request, response);
 
     }
 
